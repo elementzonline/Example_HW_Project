@@ -47,7 +47,7 @@ def rename_firmware(source, target, env):
     new_filename = f"Firmware_PIOTemplate_{env_name}_{version}+{commit_hash}_{build_timestamp}.bin"
 
     # The source parameter is the actual firmware path
-    firmware_src = str(source[0])
+    firmware_src = str(source[0]).replace(".elf", ".bin")
     print(f"Source firmware: {firmware_src}")
 
     # Get the directory and create new path
