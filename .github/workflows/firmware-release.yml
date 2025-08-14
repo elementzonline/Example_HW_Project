@@ -137,6 +137,7 @@ jobs:
           tag_name: ${{ steps.version_info.outputs.RELEASE_TAG }}
           name: PIOTemplate Firmware ${{ steps.version_info.outputs.VERSION }}
           body_path: release_notes.md
+          target_commitish: ${{ github.sha }}
           draft: false
           prerelease: ${{ contains(steps.version_info.outputs.VERSION, 'B') ||
             contains(steps.version_info.outputs.VERSION, 'A') ||
